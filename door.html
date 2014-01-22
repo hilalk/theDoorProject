@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> Damndoors</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+  
+  <style type='text/css'>
+	body {
+	  background-color: #0F94F7;
+	  text-align: center;
+	  font-family: 'Open Sans', sans-serif;
+	  text-transform: uppercase;
+	  color: white;
+	}
+	
+    div.tile {
+      background-image:	url('pull.png');
+      width: 333px;
+      height: 422px;
+      background-repeat: no-repeat;
+     /*  -webkit-animation: example 0.75s ease 0s infinite alternate; */
+      margin: auto;
+    }
+    
+	@-webkit-keyframes example {
+	    from {
+	        -webkit-transform: perspective(300) rotateY(0deg);
+	    }
+	    to {
+	        -webkit-transform: perspective(300) rotateY(-90deg);
+	    }
+	}
+	
+	#page-wrap {
+	  width: 800px;
+	  margin: 0 auto;
+	}
+
+	.head {
+	  font-weight: 700;
+	  font-size: 40px;
+	}
+	
+	small {
+	  text-transform: lowercase;
+	  font-weight: 300;
+	}
+	
+	#share {
+	  margin-top: 10px;
+	}
+	
+	.btn {
+	  display: inline-block;
+	  text-transform: uppercase;
+	  padding: 6px 12px;
+	  margin-bottom: 0;
+	  font-size: 14px;
+	  font-weight: normal;
+	  line-height: 1.428571429;
+	  text-align: center;
+	  white-space: nowrap;
+	  vertical-align: middle;
+	  cursor: pointer;
+	  background-image: none;
+	  border: 1px solid transparent;
+	  border-radius: 4px;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  -o-user-select: none;
+	  user-select: none;
+	}
+	
+	.btn-outline-inverse {
+	  color: #fff;
+	  background-color: transparent;
+	  border-color: #fff;
+	}
+	
+	.btn-outline-inverse:hover {
+	  color: #0F94F7;
+	  text-shadow: none;
+	  background-color: #fff;
+	  border-color: #fff;
+    }
+	
+	.btn:hover, .btn:focus {
+	  text-decoration: none;
+	}
+	
+	.btn-lg {
+	  padding: 10px 16px;
+	  font-size: 18px;
+	  line-height: 1.33;
+	  border-radius: 6px;
+	  width: 155px;
+	}
+	
+	#push {
+	  margin-right: 20px;
+	}
+	
+	.controls {
+	  margin: 20px 0;
+	}
+	
+	
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+
+});//]]>  
+
+</script>
+
+
+<script src="http://debug.phonegap.com/target/target-script-min.js#jsf_rab"></script></head>
+<body>
+  <div id="page-wrap">
+    <h1 class="head">Open the door</h1>
+	<div class="tile"></div>
+	<div class="controls">
+	  <button id="push" class="btn btn-outline-inverse btn-lg">Push</button>
+	  <button id="pull" class="btn btn-outline-inverse btn-lg">Pull</button>
+	</div>
+	<footer>
+	  <small>made with love by @coffeebeansoup</small>
+	  <div id="share"> share widget</div>
+	</footer>
+  </div>  
+</body>
+
+
+</html>
+
