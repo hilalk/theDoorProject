@@ -1,189 +1,202 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title> You Can't HANDLE This</title>  
-  <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
-  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
-  
-  <style type='text/css'>
-	body {
-	  background-color: #0F94F7;
-	  text-align: center;
-	  font-family: 'Open Sans', sans-serif;
-	  text-transform: uppercase;
-	  color: white;
-	}
-	
-    div.tile-push {
-      background-image:	url('images/push.png');
-      width: 333px;
-      height: 422px;
-      background-repeat: no-repeat;
-      -webkit-animation-fill-mode: forwards;
-      margin: auto;
-    }
-    
-    div.tile-pull {
-      background-image:	url('images/pull.png');
-      width: 333px;
-      height: 422px;
-      background-repeat: no-repeat;
-      -webkit-animation-fill-mode: forwards;
-      margin: auto;
-    }
-    
-    .open {
-     -webkit-animation: open 0.75s ease 0s alternate;
-    }
-    
-    .shake {
-     -webkit-animation: shake 0.75s ease 0s alternate;
-    }
-    
-    
-	@-webkit-keyframes open {
-	    from {
-	        -webkit-transform: perspective(300) rotateY(0deg);
-	    }
-	    to {
-	        -webkit-transform: perspective(300) rotateY(-90deg);
-	        
-	    }
-	}
-	
-    @-webkit-keyframes shake {
-	   
-	  	    from {
-	        -webkit-transform: perspective(20) rotateY(0deg);
-	    }
-	    to {
-	        -webkit-transform: perspective(90) rotateY(-90deg);
-	        
-	    }
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title> You Can't This</title>  
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <style type='text/css'>
+      body {
+        background-color: #0F94F7;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        color: white;
+      }
 
-	}
-	
-	#page-wrap {
-	  width: 800px;
-	  margin: 0 auto;
-	}
+      div.tile-push {
+        background-image:	url('images/push.png');
+        width: 333px;
+        height: 422px;
+        background-repeat: no-repeat;
+        -webkit-animation-fill-mode: forwards;
+        margin: auto;
+      }
 
-	.head {
-	  font-weight: 700;
-	  font-size: 40px;
-	}
-	
-	small {
-	  text-transform: lowercase;
-	  font-weight: 300;
-	}
-	
-	#share {
-	  margin-top: 10px;
-	}
-	
-	.btn {
-	  display: inline-block;
-	  text-transform: uppercase;
-	  padding: 6px 12px;
-	  margin-bottom: 0;
-	  font-size: 14px;
-	  font-weight: normal;
-	  line-height: 1.428571429;
-	  text-align: center;
-	  white-space: nowrap;
-	  vertical-align: middle;
-	  cursor: pointer;
-	  background-image: none;
-	  border: 1px solid transparent;
-	  border-radius: 4px;
-	  -webkit-user-select: none;
-	  -moz-user-select: none;
-	  -ms-user-select: none;
-	  -o-user-select: none;
-	  user-select: none;
-	}
-	
-	.btn-outline-inverse {
-	  color: #fff;
-	  background-color: transparent;
-	  border-color: #fff;
-	}
-	
-	.btn-outline-inverse:hover {
-	  color: #0F94F7;
-	  text-shadow: none;
-	  background-color: #fff;
-	  border-color: #fff;
-    }
-	
-	.btn:hover, .btn:focus {
-	  text-decoration: none;
-	}
-	
-	.btn-lg {
-	  padding: 10px 16px;
-	  font-size: 18px;
-	  line-height: 1.33;
-	  border-radius: 6px;
-	  width: 155px;
-	}
-	
-	#push {
-	  margin-right: 20px;
-	}
-	
-	.controls {
-	  margin: 20px 0;
-	}
-	
-	
-  </style>  
-<script type='text/javascript'>
-$(window).load(function(){
-	var random = Math.floor((Math.random()*2)+1);
-	if (random == 1){
-	 $('.tile-pull').hide();
-	 }else {
-	 $('.tile-push').hide();
-	}
-	
-	$("#push" ).click(function() {	
-	/*   alert( "Handler for .click() called." ); */
-      $("#controls, #footer, #head").fadeOut(300, function(){$("#push-text").fadeIn();});
-       $('.tile-pull').addClass('open');
-       $('.tile-push').addClass('shake');
-	});
-	
-	$("#pull" ).click(function() {	
-	/*   alert( "Handler for .click() called." ); */
-      $("#controls, #footer, #head").fadeOut(300, function(){$("#pull-text").fadeIn();});
-      $('.tile-push').addClass('open');
-      $('.tile-pull').addClass('shake');
-	});
-});
+      div.tile-pull {
+        background-image:	url('images/pull.png');
+        width: 333px;
+        height: 422px;
+        background-repeat: no-repeat;
+        -webkit-animation-fill-mode: forwards;
+        margin: auto;
+      }
 
-</script>
-</head>
-<body>
-  <div id="page-wrap">
-    <h1 id="head">Open the door</h1>
-	<div class="tile-push"></div>
-    <div class="tile-pull"></div>
-	<div id="push-text" style="display:none;" >I just pushed</div>
-	<div id="pull-text" style="display:none;">I just pulled</div>
-	<div id="controls">
-	  <button id="push" class="btn btn-outline-inverse btn-lg">Push</button>
-	  <button id="pull" class="btn btn-outline-inverse btn-lg">Pull</button>
-	</div>
-	<footer>
-	  <small>made with love by @coffeebeansoup</small>
-	  <div id="share"> share widget</div>
-	</footer>
-  </div>  
-</body>
+      .open {
+        -webkit-animation: open 0.75s ease 0s alternate;
+      }
+
+      .shake {
+        -webkit-animation: shake 0.75s ease 0s alternate;
+      }
+
+
+      @-webkit-keyframes open {
+        from {
+          -webkit-transform: perspective(300) rotateY(0deg);
+        }
+        to {
+          -webkit-transform: perspective(300) rotateY(-90deg);
+
+        }
+      }
+
+      @-webkit-keyframes shake {
+
+        from {
+          -webkit-transform: perspective(20) rotateY(0deg);
+        }
+        to {
+          -webkit-transform: perspective(90) rotateY(-90deg);
+
+        }
+
+      }
+
+      #page-wrap {
+        width: 800px;
+        margin: 0 auto;
+      }
+
+      .head {
+        font-weight: 700;
+        font-size: 40px;
+      }
+
+      small {
+        text-transform: lowercase;
+        font-weight: 300;
+      }
+
+      #share {
+        margin-top: 10px;
+      }
+
+      .btn {
+        display: inline-block;
+        text-transform: uppercase;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.428571429;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      }
+
+      .btn-outline-inverse {
+        color: #fff;
+        background-color: transparent;
+        border-color: #fff;
+      }
+
+      .btn-outline-inverse:hover {
+        color: #0F94F7;
+        text-shadow: none;
+        background-color: #fff;
+        border-color: #fff;
+      }
+
+      .btn:hover, .btn:focus {
+        text-decoration: none;
+      }
+
+      .btn-lg {
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.33;
+        border-radius: 6px;
+        width: 155px;
+      }
+
+      #push {
+        margin-right: 20px;
+      }
+
+      .controls {
+        margin: 20px 0;
+      }
+
+
+    </style>
+    <script type='text/javascript'>
+      $(window).load(function(){
+          var random = Math.floor((Math.random()*2)+1);
+          if (random == 1){
+          $('.tile-pull').hide();
+          }else {
+          $('.tile-push').hide();
+          }
+
+          $("#push" ).click(function() {	
+            /*   alert( "Handler for .click() called." ); */
+            $("#controls, #footer, #head").fadeOut(300, function(){$("#push-text").fadeIn();});
+            $('.tile-pull').addClass('open');
+            $('.tile-push').addClass('shake');
+            });
+
+          $("#pull" ).click(function() {	
+            /*   alert( "Handler for .click() called." ); */
+            $("#controls, #footer, #head").fadeOut(300, function(){$("#pull-text").fadeIn();});
+            $('.tile-push').addClass('open');
+            $('.tile-pull').addClass('shake');
+            });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=648735245187096";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div id="page-wrap">
+      <h1 id="head">Open the door</h1>
+      <div class="tile-push"></div>
+      <div class="tile-pull"></div>
+      <div id="push-text" style="display:none;" >I just pushed</div>
+      <div id="pull-text" style="display:none;">I just pulled</div>
+      <div id="controls">
+        <button id="push" class="btn btn-outline-inverse btn-lg">Push</button>
+        <button id="pull" class="btn btn-outline-inverse btn-lg">Pull</button>
+      </div>
+      <footer>
+        <small>made with love by @coffeebeansoup</small>
+        <div id="share">
+          <div class="fb-like" data-href="https://www.youcanthandleth.is" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+          <a class="twitter-share-button" data-lang="en" data-url="http://www.youcanthandleth.is">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+          </script>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
 
