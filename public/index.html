@@ -8,6 +8,21 @@
     <link rel="stylesheet" type="text/css" href="/css/result-light.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
     <style type='text/css'>
+      * {
+        margin: 0;
+      }
+      html, body {
+        height: 100%;
+      }
+      #page-wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+      }
+      .footer, .middle-pusher{
+        height: 155px; /* .push must be the same height as .footer */
+      }
       body {
         background-color: #0F94F7;
         text-align: center;
@@ -39,7 +54,8 @@
       }
 
       .shake {
-        -webkit-animation: shake 0.75s ease 0s alternate;
+        /*-webkit-animation: shake 0.75s ease 0s alternate;*/
+        background-color: red;
       }
 
 
@@ -68,13 +84,18 @@
       #page-wrap {
         width: 800px;
         margin: 0 auto;
+        margin-top: 30px;
       }
 
-      .head {
+      #head {
+        margin-bottom: 20px;
+        height: 60px;
+      }
+
+      h1 {
         font-weight: 700;
         font-size: 40px;
       }
-
       small {
         text-transform: lowercase;
         font-weight: 300;
@@ -139,6 +160,7 @@
 
       #controls {
         margin: 20px 0 30px 0;
+        height: 50px;
       }
 
       a {
@@ -155,21 +177,21 @@
       $(window).load(function(){
           var random = Math.floor((Math.random()*2)+1);
           if (random == 1){
-          $('.tile-pull').hide();
+            $('.tile-pull').show();
           }else {
-          $('.tile-push').hide();
+            $('.tile-push').show();
           }
 
           $("#push" ).click(function() {	
             /*   alert( "Handler for .click() called." ); */
-            $("#controls, #footer, #head").fadeOut(300, function(){$("#push-text").fadeIn();});
+            $("#controls button, #footer, #head h1").fadeOut(300, function(){$("#push-text").fadeIn();});
             $('.tile-pull').addClass('open');
             $('.tile-push').addClass('shake');
             });
 
           $("#pull" ).click(function() {	
             /*   alert( "Handler for .click() called." ); */
-            $("#controls, #footer, #head").fadeOut(300, function(){$("#pull-text").fadeIn();});
+            $("#controls button, #footer, #head h1").fadeOut(300, function(){$("#pull-text").fadeIn();});
             $('.tile-push').addClass('open');
             $('.tile-pull').addClass('shake');
             });
@@ -188,15 +210,18 @@
       }(document, 'script', 'facebook-jssdk'));
     </script>
     <div id="page-wrap">
-      <h1 id="head">Open the door</h1>
-      <div class="tile-push"></div>
-      <div class="tile-pull"></div>
+      <div id="head">
+       <h1>Open the door</h1>
+     </div>
+      <div class="tile-push" style="display:none;"></div>
+      <div class="tile-pull" style="display:none"></div>
       <div id="push-text" style="display:none;" >I just pushed</div>
       <div id="pull-text" style="display:none;">I just pulled</div>
       <div id="controls">
         <button id="push" class="btn btn-outline-inverse btn-lg">Push</button>
         <button id="pull" class="btn btn-outline-inverse btn-lg">Pull</button>
       </div>
+      <div class="middle-pusher"></div>
     </div>
     <footer>
       <small>made with love by <a href="https://twitter.com/coffeebeansoup" target="_blank">@coffeebeansoup</a></small>
