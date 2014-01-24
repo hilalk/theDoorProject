@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title> Damndoors</title>
-  
+  <title> You Can't HANDLE This</title>  
   <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="/css/result-light.css">
@@ -19,22 +17,53 @@
 	  color: white;
 	}
 	
-    div.tile {
-      background-image:	url('/images/pull.png');
+    div.tile-push {
+      background-image:	url('images/push.png');
       width: 333px;
       height: 422px;
       background-repeat: no-repeat;
-      -webkit-animation: example 0.75s ease 0s infinite alternate;
+      -webkit-animation-fill-mode: forwards;
       margin: auto;
     }
     
-	@-webkit-keyframes example {
+    div.tile-pull {
+      background-image:	url('images/pull.png');
+      width: 333px;
+      height: 422px;
+      background-repeat: no-repeat;
+      -webkit-animation-fill-mode: forwards;
+      margin: auto;
+    }
+    
+    .open {
+     -webkit-animation: open 0.75s ease 0s alternate;
+    }
+    
+    .shake {
+     -webkit-animation: shake 0.75s ease 0s alternate;
+    }
+    
+    
+	@-webkit-keyframes open {
 	    from {
 	        -webkit-transform: perspective(300) rotateY(0deg);
 	    }
 	    to {
 	        -webkit-transform: perspective(300) rotateY(-90deg);
+	        
 	    }
+	}
+	
+    @-webkit-keyframes shake {
+	   
+	  	    from {
+	        -webkit-transform: perspective(20) rotateY(0deg);
+	    }
+	    to {
+	        -webkit-transform: perspective(90) rotateY(-90deg);
+	        
+	    }
+
 	}
 	
 	#page-wrap {
@@ -112,24 +141,41 @@
 	}
 	
 	
-  </style>
-  
-
-
-<script type='text/javascript'>//<![CDATA[ 
+  </style>  
+<script type='text/javascript'>
 $(window).load(function(){
-
-});//]]>  
+	var random = Math.floor((Math.random()*2)+1);
+	if (random == 1){
+	 $('.tile-pull').hide();
+	 }else {
+	 $('.tile-push').hide();
+	}
+	
+	$("#push" ).click(function() {	
+	/*   alert( "Handler for .click() called." ); */
+      $("#controls, #footer, #head").fadeOut(300, function(){$("#push-text").fadeIn();});
+       $('.tile-pull').addClass('open');
+       $('.tile-push').addClass('shake');
+	});
+	
+	$("#pull" ).click(function() {	
+	/*   alert( "Handler for .click() called." ); */
+      $("#controls, #footer, #head").fadeOut(300, function(){$("#pull-text").fadeIn();});
+      $('.tile-push').addClass('open');
+      $('.tile-pull').addClass('shake');
+	});
+});
 
 </script>
-
-
-<script src="http://debug.phonegap.com/target/target-script-min.js#jsf_rab"></script></head>
+</head>
 <body>
   <div id="page-wrap">
-    <h1 class="head">Open the door</h1>
-	<div class="tile"></div>
-	<div class="controls">
+    <h1 id="head">Open the door</h1>
+	<div class="tile-push"></div>
+    <div class="tile-pull"></div>
+	<div id="push-text" style="display:none;" >I just pushed</div>
+	<div id="pull-text" style="display:none;">I just pulled</div>
+	<div id="controls">
 	  <button id="push" class="btn btn-outline-inverse btn-lg">Push</button>
 	  <button id="pull" class="btn btn-outline-inverse btn-lg">Pull</button>
 	</div>
@@ -139,7 +185,5 @@ $(window).load(function(){
 	</footer>
   </div>  
 </body>
-
-
 </html>
 
