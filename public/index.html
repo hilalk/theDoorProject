@@ -15,13 +15,14 @@
 */
       html, body {
         height: 100%;
+        /* overflow: hidden; */
       }
       
       #page-wrap {
         min-height: 100%;
         height: auto !important;
         height: 100%;
-        margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+        margin: 0 auto -10px; /* the bottom margin is the negative value of the footer's height */
       }
       
 	  footer {
@@ -62,6 +63,11 @@
       .open {
         -webkit-animation: open 0.75s ease 0s alternate;
       }
+      
+      .open-push {
+        -webkit-animation: open-push 0.75s ease 0s alternate;
+      }
+
 
       .shake {
         /*-webkit-animation: shake 0.75s ease 0s alternate;*/
@@ -71,10 +77,25 @@
 
       @-webkit-keyframes open {
         from {
-          -webkit-transform: perspective(300) rotateY(0deg);
+          -webkit-transform: perspective(0) rotateY(0deg);
+          -webkit-transform-origin: 0% 0%;        
         }
         to {
-          -webkit-transform: perspective(300) rotateY(-90deg);
+          -webkit-transform: perspective(360) rotateY(-90deg);
+          -webkit-transform-origin: 0% 0%;  
+
+        }
+      }
+      
+      
+      @-webkit-keyframes open-push {
+        from {
+          -webkit-transform: perspective(0) rotateY(0deg);
+          -webkit-transform-origin: 0% 0%;        
+        }
+        to {
+          -webkit-transform: perspective(360) rotateY(90deg);
+          -webkit-transform-origin: 0% 0%;  
 
         }
       }
@@ -90,6 +111,7 @@
         }
 
       }
+      
 
       #page-wrap {
         width: 800px;
@@ -186,10 +208,15 @@
       
       .message {
 		position: absolute;
-		/* bottom: 240px; */
+		top: 100px;
 		text-align: left;
 		font-size: 50px;
       }
+      
+      p {
+      margin: 0;
+      }
+      
     </style>
     <script type='text/javascript'>
       $(window).load(function(){
@@ -210,7 +237,7 @@
             $("#push" ).click(function() {	
             /*   alert( "Handler for .click() called." ); */
             $("#controls button, #head h1").fadeOut(300, function(){$("#push-text").fadeIn();});
-            $('.door-push').addClass('open');
+            $('.door-push').addClass('open-push');
             });
             $("#pull" ).click(function() {	
             /*   alert( "Handler for .click() called." ); */
@@ -234,8 +261,13 @@
     <div id="page-wrap">
       <div id="head">
        <h1>Open the door</h1>
-                   <div class="message" id="push-text" style="display:none;" >You can only push a door open when there is no handle to pull. Sometimes less is more. </div>
-      <div class="message" id="pull-text" style="display:none;">Handles want to be pulled. Your intuition will tell you to pull the handle to open the door.</div>
+	   <div class="message" id="push-text" style="display:none;" >
+	     <p>You can only push a door open when there is no handle to pull.</p>
+	     <p>Sometimes less is more.</p>  
+	   </div>
+      <div class="message" id="pull-text" style="display:none;">
+        <p>Handles want to be pulled. Your intuition will tell you to pull the handle to open the door.</p>
+      </div>
      </div>
       <div class="door-push" style="display:none;"></div>
       <div class="door-pull" style="display:none"></div>
