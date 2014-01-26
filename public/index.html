@@ -224,23 +224,19 @@
           if (random == 1){
             $('.door-pull').show();
             $("#pull" ).click(function() {	
-            /*   alert( "Handler for .click() called." ); */
             $("#controls button, #head h1").fadeOut(300, function(){$("#pull-text").fadeIn();});
             $('.door-pull').addClass('open');
             });
             $("#push" ).click(function() {	
-            /*   alert( "Handler for .click() called." ); */
             $('.door-pull').addClass('shake');
             });        
           }else {
             $('.door-push').show();
             $("#push" ).click(function() {	
-            /*   alert( "Handler for .click() called." ); */
             $("#controls button, #head h1").fadeOut(300, function(){$("#push-text").fadeIn();});
             $('.door-push').addClass('open-push');
             });
             $("#pull" ).click(function() {	
-            /*   alert( "Handler for .click() called." ); */
             $('.door-push').addClass('shake');
             });    
           }
@@ -248,16 +244,14 @@
     </script>
   </head>
   <body>
-    <div id="fb-root"></div>
-    <script>
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=648735245187096";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
+<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=648735245187096";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
     <div id="page-wrap">
       <div id="head">
        <h1>Open the door</h1>
