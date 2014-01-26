@@ -196,23 +196,27 @@
           var random = Math.floor((Math.random()*2)+1);
           if (random == 1){
             $('.door-pull').show();
-          }else {
-            $('.door-push').show();
-          }
-
-          $("#push" ).click(function() {	
-            /*   alert( "Handler for .click() called." ); */
-            $("#controls button, #head h1").fadeOut(300, function(){$("#push-text").fadeIn();});
-            $('.dorr-pull').addClass('shake');
-            $('.door-push').addClass('open');
-            });
-
-          $("#pull" ).click(function() {	
+            $("#pull" ).click(function() {	
             /*   alert( "Handler for .click() called." ); */
             $("#controls button, #head h1").fadeOut(300, function(){$("#pull-text").fadeIn();});
-            $('.door-push').addClass('shake');
             $('.door-pull').addClass('open');
             });
+            $("#push" ).click(function() {	
+            /*   alert( "Handler for .click() called." ); */
+            $('.door-pull').addClass('shake');
+            });        
+          }else {
+            $('.door-push').show();
+            $("#push" ).click(function() {	
+            /*   alert( "Handler for .click() called." ); */
+            $("#controls button, #head h1").fadeOut(300, function(){$("#push-text").fadeIn();});
+            $('.door-push').addClass('open');
+            });
+            $("#pull" ).click(function() {	
+            /*   alert( "Handler for .click() called." ); */
+            $('.door-push').addClass('shake');
+            });    
+          }
       });
     </script>
   </head>
