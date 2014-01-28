@@ -5,7 +5,7 @@
     <meta property="og:title" content="You Can't Handle This"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content="http://hilalkoyuncu.com/door.png" /> 
-    <meta property="og:url" content="http://www.youcanthandleth.is"/>
+    <meta property="og:url" content="http://youcanthandleth.is"/>
     <meta property="og:site_name" content="You Can't Handle This"/>
     <meta property="og:description" content="A reaction to badly designed doors in New York City."/>
     <meta property="fb:admins" content="hilal.koyuncu" />
@@ -23,23 +23,23 @@
         height: 100%;
         /* overflow: hidden; */
       }
-      
+
       #page-wrap {
         min-height: 100%;
         height: auto !important;
         height: 100%;
         margin: 0 auto -10px; /* the bottom margin is the negative value of the footer's height */
-      }
-      
-	  footer {
-	    position: relative;
-	    bottom: 20px;
-	  }
-	  
+    }
+
+    footer {
+      position: relative;
+      bottom: 20px;
+    }
+
       footer, .middle-pusher{
         height: 10px; /* .push must be the same height as .footer */
       }
-      
+
       body {
         background-color: #0F94F7;
         text-align: center;
@@ -69,7 +69,7 @@
       .open {
         -webkit-animation: open 0.75s ease 0s alternate;
       }
-      
+
       .open-push {
         -webkit-animation: open-push 0.75s ease 0s alternate;
       }
@@ -80,28 +80,26 @@
         background-color: red;
       }
 
-
       @-webkit-keyframes open {
         from {
           -webkit-transform: perspective(0) rotateY(0deg);
-          -webkit-transform-origin: 0% 0%;        
+          -webkit-transform-origin: 0% 0%;
         }
         to {
           -webkit-transform: perspective(360) rotateY(-90deg);
-          -webkit-transform-origin: 0% 0%;  
+          -webkit-transform-origin: 0% 0%;
 
         }
       }
-      
-      
+
       @-webkit-keyframes open-push {
         from {
           -webkit-transform: perspective(0) rotateY(0deg);
-          -webkit-transform-origin: 0% 0%;        
+          -webkit-transform-origin: 0% 0%;
         }
         to {
           -webkit-transform: perspective(360) rotateY(90deg);
-          -webkit-transform-origin: 0% 0%;  
+          -webkit-transform-origin: 0% 0%;
 
         }
       }
@@ -117,7 +115,6 @@
         }
 
       }
-      
 
       #page-wrap {
         width: 800px;
@@ -211,40 +208,40 @@
         text-decoration: none;
         opacity: 0.7;
       }
-      
+
       .message {
-		position: absolute;
-		top: 100px;
-		text-align: left;
-		font-size: 50px;
+        position: absolute;
+        top: 100px;
+        text-align: left;
+        font-size: 50px;
       }
-      
+
       p {
       margin: 0 0 0 20px ;
       }
-      
+
     </style>
     <script type='text/javascript'>
       $(window).load(function(){
           var random = Math.floor((Math.random()*2)+1);
           if (random == 1){
             $('.door-pull').show();
-            $("#pull" ).click(function() {	
+            $("#pull" ).click(function() {
             $("#controls button, #head h1").fadeOut(300, function(){$("#pull-text").fadeIn();});
             $('.door-pull').addClass('open');
             });
-            $("#push" ).click(function() {	
+            $("#push" ).click(function() {
             $('.door-pull').addClass('shake');
-            });        
+            });
           }else {
             $('.door-push').show();
-            $("#push" ).click(function() {	
+            $("#push" ).click(function() {
             $("#controls button, #head h1").fadeOut(300, function(){$("#push-text").fadeIn();});
             $('.door-push').addClass('open-push');
             });
-            $("#pull" ).click(function() {	
+            $("#pull" ).click(function() {
             $('.door-push').addClass('shake');
-            });    
+            });
           }
       });
     </script>
@@ -261,10 +258,10 @@
     <div id="page-wrap">
       <div id="head">
        <h1>Open the door</h1>
-	   <div class="message" id="push-text" style="display:none;" >
-	     <p>You can only push a door open when there is no handle to pull.</p>
-	     <p>Sometimes less is more.</p>  
-	   </div>
+     <div class="message" id="push-text" style="display:none;" >
+       <p>You can only push a door open when there is no handle to pull.</p>
+       <p>Sometimes less is more.</p>
+     </div>
       <div class="message" id="pull-text" style="display:none;">
         <p>Handles want to be pulled. Your intuition will tell you to pull the handle to open the door.</p>
       </div>
@@ -280,8 +277,8 @@
     <footer>
       <small>made with love by <a href="https://twitter.com/coffeebeansoup" target="_blank">@coffeebeansoup</a></small>
         <div id="share">
-          <div class="fb-like" data-href="http://damn-doors.herokuapp.com" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-          <a class="twitter-share-button" data-lang="en" data-url="http://www.youcanthandleth.is">Tweet</a>
+          <div class="fb-like" data-href="http://youcanthandleth.is" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+          <a class="twitter-share-button" data-lang="en" data-url="http://youcanthandleth.is">Tweet</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
           </script>
     </footer>
