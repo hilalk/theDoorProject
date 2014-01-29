@@ -173,18 +173,6 @@
         }
       }
 
-      @-webkit-keyframes shake {
-
-        from {
-          -webkit-transform: perspective(20) rotateY(0deg);
-        }
-        to {
-          -webkit-transform: perspective(90) rotateY(-90deg);
-
-        }
-
-      }
-
       .open {
         -webkit-animation: open 0.75s ease 0s alternate;
       }
@@ -192,9 +180,4 @@
 
       .open-push {
         -webkit-animation: open-push 0.75s ease 0s alternate;
-      }
-
-      .shake {
-        /*-webkit-animation: shake 0.75s ease 0s alternate;*/
-        background-color: red;
       }

@@ -17,6 +17,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animate.css" />
   </head>
   <script type='text/javascript'>
   $(window).load(function(){
@@ -33,7 +34,10 @@
           }, 1000);
         });
         $("#push" ).click(function() {
-          $('.door-pull').addClass('shake');
+          setTimeout(function() {
+            $('.door-pull').addClass('animated shake');
+          }, 300);
+          $('.door-pull').removeClass('animated shake');
         });
       }else {
         $('.door-push').show();
@@ -48,7 +52,10 @@
           }, 1000);
         });
         $("#pull" ).click(function() {
-          $('.door-push').addClass('shake');
+          setTimeout(function() {
+            $('.door-push').addClass('animated shake');
+          }, 300);
+          $('.door-push').removeClass('animated shake');
         });
       }
   });
