@@ -33,7 +33,6 @@
         background-color: #0F94F7;
         text-align: center;
         font-family: 'Open Sans', sans-serif;
-        text-transform: uppercase;
         color: white;
        }
 
@@ -117,36 +116,27 @@
       }
 
       div.small {
-        text-transform: lowercase;
         font-weight: 300;
+        margin-bottom: 10px;
       }
-/*
-      
-	  .message {
-		font-size: 50px;
-		margin: 0 100px 0 150px;
-		text-align: left;
-		position: absolute;
-		width: 800px;
-		top: 100px;
-	  }
-	  
-	  header {
-	  position: relative;
-	  }
-*/
 
       .message {
         font-size: 50px;
-        margin: 0 50px 0 50px;
         text-align: left;
+		height: 535px;
+		display: table-cell;
+		vertical-align: middle;
+		float: none;
       }
 
       p {
-          margin-left: 80px !important;
           margin-bottom: 0 !important;
+          text-transform: uppercase;
         }
-
+        
+      h1 {
+        font-size: 40px;
+      }
       /*Animations*/
 
       @-webkit-keyframes open {
@@ -180,4 +170,8 @@
 
       .open-push {
         -webkit-animation: open-push 0.75s ease 0s alternate;
+      }
+      
+      .fb-like {
+        margin-left: 30px !important;
       }
