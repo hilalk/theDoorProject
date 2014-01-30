@@ -21,8 +21,7 @@
   </head>
   <script type='text/javascript'>
     $(window).load(function(){
-      $("body").css("display", "none");
-      $("body").fadeIn(2000);
+      $("body").fadeIn(1000);
       var random = Math.floor((Math.random()*2)+1);
       if (random == 1){
         $('.door-pull').show();
@@ -62,7 +61,7 @@
       }
   });
   </script>
-  <body>
+  <body style="display:none;">
     <div id="fb-root"></div>
     <script>
     (function(d, s, id) {
