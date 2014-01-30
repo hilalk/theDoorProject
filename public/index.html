@@ -34,10 +34,10 @@
           }, 1000);
         });
         $("#push" ).click(function() {
+          $('.door-pull').addClass('animated shake');
           setTimeout(function() {
-            $('.door-pull').addClass('animated shake');
+            $('.door-pull').removeClass('animated shake');
           }, 300);
-          $('.door-pull').removeClass('animated shake');
         });
       }else {
         $('.door-push').show();
@@ -52,10 +52,10 @@
           }, 1000);
         });
         $("#pull" ).click(function() {
+          $('.door-push').addClass('animated shake');
           setTimeout(function() {
-            $('.door-push').addClass('animated shake');
+            $('.door-push').removeClass('animated shake');
           }, 300);
-          $('.door-push').removeClass('animated shake');
         });
       }
   });
