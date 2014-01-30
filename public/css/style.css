@@ -13,6 +13,9 @@
         footer a:hover {
             color: #efefef;
         }
+        .footer-link {
+          vertical-align: top;
+        }
         .wrapper {
             min-height: 100%;
             height: auto !important;
